@@ -3,6 +3,31 @@ import styled from "styled-components";
 export const Container = styled.div`
   width: 100%;
   height: 100vh;
+
+  display: grid;
+  grid-template-rows: 116px auto;
+  grid-template-areas:
+  "header"
+  "content";
+
+  > main {
+    grid-area: content;
+    overflow-y: auto;
+  }
+`;
+
+export const Details = styled.div`
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 53px;
+
+  h1 {
+    color: ${({theme}) => theme.COLORS.WHITE};
+  }
 `;
 
 export const Content = styled.div`
@@ -10,12 +35,15 @@ export const Content = styled.div`
   margin: 0 auto;
   padding: 50px 0;
 
+
   > div {
     width: 100%;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    margin-bottom: 53px;
 
     h1 {
       color: ${({theme}) => theme.COLORS.WHITE};
