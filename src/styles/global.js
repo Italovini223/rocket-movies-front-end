@@ -10,4 +10,13 @@ export default createGlobalStyle`
   body {
     background: ${({theme}) => theme.COLORS.BACKGROUND_900};
   }
+
+  button, a {
+    cursor: pointer;
+    transition: filter 0.2s;
+  }
+
+  button:hover, a:hover {
+    filter: brightness(0.9);
+  }
 `;

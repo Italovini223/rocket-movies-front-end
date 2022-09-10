@@ -5,7 +5,7 @@ export const Container = styled.div`
   height: 100vh;
 
   display: grid;
-  grid-template-rows: 116px auto;
+  grid-template-rows: 116px  auto;
   grid-template-areas:
   "header"
   "content";
@@ -14,29 +14,20 @@ export const Container = styled.div`
     grid-area: content;
     overflow-y: auto;
   }
+
 `;
 
-export const Details = styled.div`
-  width: 100%;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  margin-bottom: 53px;
-
-  h1 {
-    color: ${({theme}) => theme.COLORS.WHITE};
-  }
-`;
 
 export const Content = styled.div`
   max-width: 1137px;
+  height: 100vh;
   margin: 0 auto;
-  padding: 50px 0;
+  padding: 50px ;
 
+  display: flex;
+  flex-direction: column;
 
-  > div {
+  .head {
     width: 100%;
 
     display: flex;
@@ -49,7 +40,8 @@ export const Content = styled.div`
       color: ${({theme}) => theme.COLORS.WHITE};
     }
   }
-  `;
+
+`;
 
   export const NewNote = styled.button`
    display: flex;
@@ -71,4 +63,5 @@ export const Content = styled.div`
       font-size: 16px;
    }
 `;
+
  

@@ -1,11 +1,12 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const Container = styled.button`
   width: 100%;
 
   display: flex;
   flex-direction: column;
   
+ 
 
   padding: 32px;
   margin-bottom: 24px; 
@@ -13,11 +14,18 @@ export const Container = styled.div`
 
   background-color: ${({theme}) => theme.COLORS.BACKGROUND_700};
 
+  border: none;
+
+  &:hover{
+    cursor: pointer;
+  }
+
   > h2 {
     width: 100%;
     margin-bottom: 15px;
     font-size: 24px;
     font-weight: 700;
+    text-align: left;
 
     color: ${({theme}) => theme.COLORS.WHITE};
   }
@@ -27,7 +35,7 @@ export const Container = styled.div`
     margin-bottom: 15px;
 
     font-size: 16px;
-    font-weight: 700;
+    font-weight: 400;
     color: ${({theme}) => theme.COLORS.GREY_400};
 
     text-align: justify;
