@@ -18,8 +18,52 @@ export const Container = styled.div`
 `; 
 
 export const Form = styled.form`
-
   max-width: 340px;
-  margin: 0 auto;
+  margin: 30px auto 0;
+
+  > div:nth-child(3) {
+    margin-bottom: 24px;
+  }
+
+
+`;
+
+export const Avatar = styled.div`
+  width: 186px;
+  height: 186px;
+
+  position: relative;
+
+
+  margin: -136px auto 64px;
+
+  > img {
+    width: 186px;
+    height: 186px;
+
+    border-radius: 50%;
+  }
+  
+  > label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    bottom: 7px;
+    right: 7px;
+
+    cursor: pointer;
+
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+
+    background-color: ${({theme}) => theme.COLORS.SALMON};
+
+    input {
+      display: none;
+    }
+  }
 `;
 

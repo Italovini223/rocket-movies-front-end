@@ -1,9 +1,9 @@
-import { Container, Form } from "./styles";
+import { Avatar, Container, Form } from "./styles";
 
 import { ArrowButton } from "../../components/ArrowButton";
 import { Input } from "../../components/Input";
 
-import {FiUser, FiMail, FiLock} from 'react-icons/fi'
+import {FiUser, FiMail, FiLock, FiCamera} from 'react-icons/fi'
 
 export function Profile() {
   return(
@@ -13,12 +13,19 @@ export function Profile() {
       </header>
 
       <Form>
+        <Avatar>
+          <img src="https://github.com/Italovini223.png" alt="" />
+          <label htmlFor="avatar">
+            <FiCamera/>
+            <input type="file" id="avatar" />
+          </label>
+        </Avatar>
         <Input
           value="Ítalo Vinícius"
           tipe="text"
           icon={FiUser}
         />
-            <Input
+        <Input
           value="ÍtaloVinícius2018@gmail.com"
           title="text"
           icon={FiMail}
