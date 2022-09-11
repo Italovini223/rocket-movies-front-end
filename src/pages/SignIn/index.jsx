@@ -1,4 +1,4 @@
-import { Container, Form } from "./styles";
+import { Background, Container, Form } from "./styles";
 
 import {Input} from '../../components/Input'
 import { Button} from '../../components/Button'
@@ -35,6 +35,7 @@ export function SignIn(){
         <Button title="Cadastrar"/>
         <ArrowButton title="Voltar para o login"/>
       </Form>
+      <Background />
     </Container>
   )
 }

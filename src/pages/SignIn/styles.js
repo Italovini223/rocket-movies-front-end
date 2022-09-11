@@ -1,5 +1,6 @@
 import styled from "styled-components";
-
+import backgroundImg from '../../assets/Background.png'
+ 
 export const Container = styled.div`
   width: 100;
   height: 100vh;
@@ -11,12 +12,13 @@ export const Container = styled.div`
 export const Form = styled.form`
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
+
 
   text-align: center;
 
-  padding: 0 136px;
+  margin: 0 136px;
 
   > h1 {
     font-size: 48px;
@@ -42,10 +44,18 @@ export const Form = styled.form`
     color: ${({theme}) => theme.COLORS.WHITE};
 
     margin-bottom: 48px;
+    
   }
 
   > button {
-    margin: 16px 0;
+    margin: 16px auto;
   }
 
+`;
+
+
+export const Background = styled.div`
+  flex: 1;
+  background: url(${backgroundImg}) no-repeat center center;
+  background-size: cover;
 `;
