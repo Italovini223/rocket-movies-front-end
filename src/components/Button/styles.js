@@ -7,6 +7,8 @@ export const Container = styled.button`
   border: none;
   background-color: ${({theme}) => theme.COLORS.SALMON};
 
+  border-radius: 10px; 
+
   > span {
     font-size: 16px;
     font-weight: 500;

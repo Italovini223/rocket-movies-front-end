@@ -4,6 +4,7 @@ import { ArrowButton } from "../../components/ArrowButton";
 import { Input } from "../../components/Input";
 
 import {FiUser, FiMail, FiLock, FiCamera} from 'react-icons/fi'
+import { Button } from "../../components/Button";
 
 export function Profile() {
   return(
@@ -40,6 +41,8 @@ export function Profile() {
           placeholder="Nova Senha"
           icon={FiLock}
         />
+
+        <Button title="Salvar" />
       </Form>
     </Container>
   )
