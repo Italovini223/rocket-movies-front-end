@@ -25,6 +25,10 @@ export const Form = styled.form`
     margin-bottom: 24px;
   }
 
+  > button {
+    margin-top: 24px;
+  }
+
 
 `;
 

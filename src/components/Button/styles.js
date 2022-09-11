@@ -9,9 +9,11 @@ export const Container = styled.button`
 
   border-radius: 10px; 
 
-  > span {
-    font-size: 16px;
-    font-weight: 500;
-    color: ${({theme}) => theme.COLORS.GREY_100};
+  font-size: 16px;
+  font-weight: 500;
+  color: ${({theme}) => theme.COLORS.GREY_100};
+  
+  &:disabled {
+    opacity: 0.5;
   }
 `;
