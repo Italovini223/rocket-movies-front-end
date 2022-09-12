@@ -12,14 +12,9 @@ export function SignIn(){
       <Form>
         <h1>RocketMovies</h1>
         <span>Aplicação para acompanhar tudo que assistir.</span>
-        <h2>Crie sua conta</h2>
+        <h2>Faça seu login</h2>
         <Input 
           icon={FiUser}
-          placeholder="Nome"
-        />
-        <Input 
-          icon={FiUser}
-          type="text"
           placeholder="Nome"
         />
         <Input 
@@ -32,8 +27,10 @@ export function SignIn(){
           type="password"
           placeholder="Senha"
         />
-        <Button title="Cadastrar"/>
-        <ArrowButton title="Voltar para o login"/>
+        <Button title="Entrar"/>
+        <button class="register">
+          Criar conta
+        </button>
       </Form>
       <Background />
     </Container>

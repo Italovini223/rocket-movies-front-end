@@ -9,15 +9,11 @@ import {FiUser, FiMail, FiLock} from 'react-icons/fi'
 export function SignUp(){
   return(
     <Container>
-      <Background />
       <Form>
         <h1>RocketMovies</h1>
         <span>Aplicação para acompanhar tudo que assistir.</span>
         <h2>Crie sua conta</h2>
-        <Input 
-          icon={FiUser}
-          placeholder="Nome"
-        />
+
         <Input 
           icon={FiUser}
           type="text"
@@ -36,6 +32,7 @@ export function SignUp(){
         <Button title="Cadastrar"/>
         <ArrowButton title="Voltar para o login"/>
       </Form>
+      <Background />
     </Container>
   )
 }

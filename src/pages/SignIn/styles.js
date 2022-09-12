@@ -51,6 +51,16 @@ export const Form = styled.form`
     margin: 16px auto;
   }
 
+  > .register {
+    border: none;
+    background: transparent;
+
+    color: ${({theme}) => theme.COLORS.SALMON};
+
+    font-size: 16px;
+    font-weight: 400;
+  }
+
 `;
 
 
