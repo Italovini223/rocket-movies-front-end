@@ -3,6 +3,7 @@ import { Container, Content } from "./styles";
 import{ Header} from '../../components/Header'
 import {ArrowButton} from '../../components/ArrowButton';
 import { Input } from "../../components/Input";
+import { TextArea } from "../../components/TextArea";
 
 export function New() {
   return(
@@ -28,6 +29,9 @@ export function New() {
             placeholder='Sua nota (de 0 a 5)'
           />
         </div>
+        <TextArea 
+          placeholder='observações'
+        />
       </Content>
     </Container>
   )
