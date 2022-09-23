@@ -20,4 +20,13 @@ export const Content = styled.div`
     align-items: center;
     gap: 40px;
   }
+
+  > h3 {
+    font-weight: 400;
+    font-size: 20px;
+
+    color: ${({theme}) => theme.COLORS.GREY_400};
+
+    margin: 40px 0 24px;
+  }
 `;

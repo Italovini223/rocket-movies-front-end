@@ -5,13 +5,13 @@ export const Container = styled.button`
   height: 48px;
 
   border: none;
-  background-color: ${({theme}) => theme.COLORS.SALMON};
+  background-color: ${({theme, Deleted}) => !Deleted ? theme.COLORS.SALMON : theme.COLORS.BACKGROUND_900};
 
   border-radius: 10px; 
 
   font-size: 16px;
   font-weight: 500;
-  color: ${({theme}) => theme.COLORS.GREY_100};
+  color: ${({theme, Deleted}) => !Deleted ? theme.COLORS.GREY_100 : theme.COLORS.SALMON};
   
   &:disabled {
     opacity: 0.5;
