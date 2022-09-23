@@ -5,7 +5,7 @@ export const Container = styled.button`
   height: 48px;
 
   border: none;
-  background-color: ${({theme, Deleted}) => !Deleted ? theme.COLORS.SALMON : theme.COLORS.BACKGROUND_900};
+  background-color: ${({theme, Deleted}) => !Deleted ? theme.COLORS.SALMON : theme.COLORS.BLACK_900};
 
   border-radius: 10px; 
 

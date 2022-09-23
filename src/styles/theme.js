@@ -10,7 +10,8 @@ export default {
     GREY_100: "#312E38",
 
     SALMON: "#FF859B",
-    WHITE: "#F4EDE8"
+    WHITE: "#F4EDE8",
+    BLACK_900: "#0D0C0F"
 
   }
 }

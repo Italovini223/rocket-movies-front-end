@@ -42,13 +42,13 @@ export function New() {
 
         <div className="buttons">
         <Button 
-            title='Salvar alterações'
+            title='Excluir filme'
             type='submit'
+            Delete
           />
            <Button 
             title='Salvar alterações'
             type='submit'
-            Delete
           />
         </div>
       </Content>
