@@ -15,6 +15,8 @@ export const Container = styled.textarea`
 
   color: ${({theme}) => theme.COLORS.WHITE};
 
+  padding: 15px;
+
   &::placeholder {
     color: ${({theme}) => theme.COLORS.GREY_200};
   }
