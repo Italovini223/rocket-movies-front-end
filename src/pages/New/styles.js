@@ -3,11 +3,20 @@ import styled from "styled-components";
 export const Container = styled.div`
   width: 100%;
   height: 100vh;
+
+  display: grid;
+  grid-template-rows: 116px auto; 
+  grid-template-areas:
+  "header"
+  "content";
 `;
 
 export const Content = styled.div`
-  max-width: 1137px;
+  width: 50%;
   margin: 40px auto;
+
+  grid-area: content;
+  overflow-y: auto;
 
   > h1 {
     color: ${({theme}) => theme.COLORS.WHITE};
@@ -30,6 +39,10 @@ export const Content = styled.div`
     margin: 40px 0 24px;
   }
 
+  .buttons {
+
+  }
+
   > .Tags {
     background-color: ${({theme}) => theme.COLORS.BLACK_900};
     height: 88px;
@@ -39,5 +52,18 @@ export const Content = styled.div`
     padding: 16px;
 
     gap: 24px;
+  }
+
+  ::-webkit-scrollbar {
+    background: none;
+
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: ${({theme}) => theme.COLORS.SALMON};
+
+    border-radius: 1129px;
+    margin-block-end: 600px;
+
   }
 `;
