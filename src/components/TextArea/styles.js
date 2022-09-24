@@ -20,5 +20,10 @@ export const Container = styled.textarea`
   &::placeholder {
     color: ${({theme}) => theme.COLORS.GREY_200};
   }
+
+  &:focus {
+    box-shadow: 0 0 0 0;
+    outline: 0;
+  } 
   
 `;
