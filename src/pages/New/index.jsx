@@ -5,6 +5,8 @@ import {ArrowButton} from '../../components/ArrowButton';
 import { Input } from "../../components/Input";
 import { TextArea } from "../../components/TextArea";
 import {Button} from '../../components/Button'
+import {TagItem} from '../../components/TagItem'
+
 
 export function New() {
   return(
@@ -41,7 +43,12 @@ export function New() {
         <h3>Marcadores</h3>
 
         <div className="Tags">
-            
+          <TagItem 
+            value='React'
+          />
+          <TagItem 
+            isNew
+          />
         </div>
 
         <div className="buttons">
