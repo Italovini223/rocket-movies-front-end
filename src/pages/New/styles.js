@@ -29,4 +29,12 @@ export const Content = styled.div`
 
     margin: 40px 0 24px;
   }
+
+  > .Tags {
+    background-color: ${({theme}) => theme.COLORS.BLACK_900};
+    height: 88px;
+    
+    margin-bottom: 40px;
+    border-radius: 8px;
+  }
 `;

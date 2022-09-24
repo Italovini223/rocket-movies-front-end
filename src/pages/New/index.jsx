@@ -40,6 +40,10 @@ export function New() {
         
         <h3>Marcadores</h3>
 
+        <div className="Tags">
+            
+        </div>
+
         <div className="buttons">
         <Button 
             title='Excluir filme'
