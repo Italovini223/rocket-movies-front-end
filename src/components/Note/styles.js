@@ -39,6 +39,12 @@ export const Container = styled.button`
     color: ${({theme}) => theme.COLORS.GREY_400};
 
     text-align: justify;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* number of lines to show */
+    -webkit-box-orient: vertical;
   }
 
   > footer {
