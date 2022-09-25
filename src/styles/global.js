@@ -9,6 +9,8 @@ export default createGlobalStyle`
 
   body {
     background: ${({theme}) => theme.COLORS.BACKGROUND_900};
+    font-family: 'Roboto Slab', serif;
+
   }
 
   button, a {
