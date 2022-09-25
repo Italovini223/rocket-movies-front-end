@@ -10,7 +10,7 @@ export function Profile() {
   return(
     <Container>
       <header>
-        <ArrowButton title="Voltar" />
+        <ArrowButton title="Voltar" link="/" />
       </header>
 
       <Form>

@@ -15,6 +15,7 @@ export function New() {
       <Content>
         <ArrowButton 
           title='Voltar'
+          link='/'
         />
 
         <h1>Novo filme</h1>

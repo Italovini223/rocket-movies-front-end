@@ -19,6 +19,7 @@ export function Details(data){
     <Content>
       <ArrowButton 
         title='Voltar'
+        link='/'
       />
 
       <div className="movie-info">

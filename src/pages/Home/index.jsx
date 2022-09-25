@@ -14,7 +14,7 @@ export function Home() {
 
         <div class="head">
             <h1>Meus filmes</h1>
-            <NewNote>
+            <NewNote to='/new'>
               <FiPlus />
               Adicionar filme
             </NewNote>
@@ -39,7 +39,9 @@ export function Home() {
               {id: 1, title:"Ficção cientifica"},
               {id: 2, title:"Drama"},
               {id: 3, title:"Familia"}
-             ]
+             ],
+
+             id : 1,
           }}/>
           <Note data={{
             title: "Interstellar",

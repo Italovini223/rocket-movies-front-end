@@ -11,7 +11,10 @@ export default {
 
     SALMON: "#FF859B",
     WHITE: "#F4EDE8",
-    BLACK_900: "#0D0C0F"
+
+
+    BLACK_900: "#0D0C0F",
+    BLACK_800: "#1C1B1E",
 
   }
 }
