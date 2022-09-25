@@ -32,7 +32,7 @@ export const Container = styled.button`
 
   p {
     width: 100%;
-    margin-bottom: 15px;
+    margin: 15px 0;
 
     font-size: 16px;
     font-weight: 400;

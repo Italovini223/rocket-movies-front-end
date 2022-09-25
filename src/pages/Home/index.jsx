@@ -22,6 +22,7 @@ export function Home() {
 
           <Note data={{
             title: "Interstellar",
+            value: 4,
             description: `
             Pragas nas colheitas fizeram a civilização humana regredir 
             para uma sociedade agrária em futuro de data desconhecida. Cooper, 
@@ -42,6 +43,7 @@ export function Home() {
           }}/>
           <Note data={{
             title: "Interstellar",
+            value: 1,
             description: `
             Pragas nas colheitas fizeram a civilização humana regredir 
             para uma sociedade agrária em futuro de data desconhecida. Cooper, 
@@ -62,6 +64,7 @@ export function Home() {
           }}/>
           <Note data={{
             title: "Interstellar",
+            value: 3,
             description: `
             Pragas nas colheitas fizeram a civilização humana regredir 
             para uma sociedade agrária em futuro de data desconhecida. Cooper, 
