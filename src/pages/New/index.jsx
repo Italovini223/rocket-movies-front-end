@@ -5,7 +5,7 @@ import {ArrowButton} from '../../components/ArrowButton';
 import { Input } from "../../components/Input";
 import { TextArea } from "../../components/TextArea";
 import {Button} from '../../components/Button'
-import {TagItem} from '../../components/TagItem'
+import {InputTag} from '../../components/InputTag'
 
 
 export function New() {
@@ -44,10 +44,10 @@ export function New() {
         <h3>Marcadores</h3>
 
         <div className="Tags">
-          <TagItem 
+          <InputTag 
             value='React'
           />
-          <TagItem 
+          <InputTag 
             isNew
           />
         </div>
