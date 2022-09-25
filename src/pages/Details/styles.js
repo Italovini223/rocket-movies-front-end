@@ -12,6 +12,14 @@ export const Content = styled.div`
 
   margin-top: 40px;
 
+  span {
+    font-family:'Roboto', sans-serif;
+    font-weight: 400;
+    line-height: 18px;
+    
+
+  }
+
   > .movie-info {
     display: flex;
     align-items: center;
@@ -74,5 +82,13 @@ export const Content = styled.div`
     line-height: 21px;
 
     color: ${({theme}) => theme.COLORS.WHITE};
+  }
+
+  > .tags {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    margin-bottom: 40px;
   }
 `;

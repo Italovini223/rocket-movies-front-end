@@ -5,10 +5,14 @@ import {ArrowButton} from '../../components/ArrowButton'
 import {RatingItem} from '../../components/RatingItem'
 
 import { FiClock } from "react-icons/fi";
+import { Tags } from "../../components/Tags";
+
+const tags = [
+  
+]
 
 
-
-export function Details(){
+export function Details(data){
  return(
   <Container>
     <Header />
@@ -33,6 +37,20 @@ export function Details(){
           <FiClock />
           <span>23/05/2022 às 08:00</span>
         </div>
+      </div>
+
+      <div className="tags">
+        <Tags 
+        title='ficção cientifica'
+        />
+
+        <Tags 
+          title='Drama'
+        />
+
+        <Tags 
+          title='Familia'
+        />
       </div>
 
       <p>
