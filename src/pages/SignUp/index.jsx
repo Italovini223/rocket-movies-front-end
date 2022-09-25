@@ -30,7 +30,12 @@ export function SignUp(){
           placeholder="Senha"
         />
         <Button title="Cadastrar"/>
-        <ArrowButton title="Voltar para o login"/>
+       <div className="back">
+        <ArrowButton 
+            title="Voltar para o login" 
+            link='/'
+          />
+       </div>
       </Form>
       <Background />
     </Container>

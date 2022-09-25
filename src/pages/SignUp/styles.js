@@ -51,6 +51,10 @@ export const Form = styled.form`
     margin: 16px auto;
   }
 
+  .back {
+    margin: 16px auto;
+  }
+
 `;
 
 

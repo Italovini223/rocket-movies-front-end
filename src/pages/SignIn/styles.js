@@ -54,11 +54,14 @@ export const Form = styled.form`
   > .register {
     border: none;
     background: transparent;
+    text-decoration: none;
 
     color: ${({theme}) => theme.COLORS.SALMON};
 
     font-size: 16px;
     font-weight: 400;
+
+    margin: 16px auto;
   }
 
 `;

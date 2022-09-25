@@ -2,9 +2,10 @@ import { Background, Container, Form } from "./styles";
 
 import {Input} from '../../components/Input'
 import { Button} from '../../components/Button'
-import { ArrowButton} from '../../components/ArrowButton'
+import { Link } from "react-router-dom";
 
 import {FiUser, FiMail, FiLock} from 'react-icons/fi'
+
 
 export function SignIn(){
   return(
@@ -13,10 +14,6 @@ export function SignIn(){
         <h1>RocketMovies</h1>
         <span>Aplicação para acompanhar tudo que assistir.</span>
         <h2>Faça seu login</h2>
-        <Input 
-          icon={FiUser}
-          placeholder="Nome"
-        />
         <Input 
           icon={FiMail}
           type="text"
@@ -28,9 +25,9 @@ export function SignIn(){
           placeholder="Senha"
         />
         <Button title="Entrar"/>
-        <button class="register">
+        <Link to='/register' class="register">
           Criar conta
-        </button>
+        </Link>
       </Form>
       <Background />
     </Container>
