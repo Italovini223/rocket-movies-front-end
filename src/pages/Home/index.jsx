@@ -9,6 +9,7 @@ export function Home() {
   return(
     <Container>
       <Header />
+      
       <main>
         <Content>
 
