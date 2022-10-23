@@ -1,12 +1,24 @@
+import { useState } from "react";
+import {FiUser, FiMail, FiLock, FiCamera} from 'react-icons/fi'
+
 import { Avatar, Container, Form } from "./styles";
+
+import { useAuth } from "../../hooks/auth";
 
 import { ArrowButton } from "../../components/ArrowButton";
 import { Input } from "../../components/Input";
-
-import {FiUser, FiMail, FiLock, FiCamera} from 'react-icons/fi'
 import { Button } from "../../components/Button";
 
+
+
 export function Profile() {
+  const {user} = useAuth();
+
+  const[name, setName] = useState(user.name);
+  const[email, setEmail] = useState(user.email);
+  const[passwordOld, setPasswordOld] = useState("");
+  const[passwordNew, setPasswordNew] = useState("");
+
   return(
     <Container>
       <header>
@@ -22,12 +34,12 @@ export function Profile() {
           </label>
         </Avatar>
         <Input
-          value="Ítalo Vinícius"
+          value={name}
           tipe="text"
           icon={FiUser}
         />
         <Input
-          value="ÍtaloVinícius2018@gmail.com"
+          value={email}
           title="text"
           icon={FiMail}
         />
