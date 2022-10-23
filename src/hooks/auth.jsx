@@ -39,7 +39,7 @@ function AuthProvider({children}){
     try{
 
       if(avatarFile){
-        const fileUploadForm = FormData();
+        const fileUploadForm = new FormData();
         fileUploadForm.append("avatar", avatarFile);
 
         const response = await api.patch("/users/avatar", fileUploadForm);
@@ -58,7 +58,7 @@ function AuthProvider({children}){
       if(error.response){
         alert(error.response.data.message)
       } else {
-        alert("Não foi possível atualizar os dados!")
+        alert("Não foi possível atualizar os dados!");
       }
     }
   }
@@ -68,6 +68,8 @@ function AuthProvider({children}){
     const token = localStorage.getItem("@rocketmovies:token")
 
     if(user && token){
+      api.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+
       setData({
         token,
         user: JSON.parse(user)
