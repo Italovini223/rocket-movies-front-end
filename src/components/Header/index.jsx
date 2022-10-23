@@ -22,7 +22,7 @@ export function Header(){
 
       <Profile>
         <div>
-          <strong>Ítalo Vinícius</strong>
+          <strong>{user.name}</strong>
           <button onClick={SingOut}>Sair</button>
         </div>
 
