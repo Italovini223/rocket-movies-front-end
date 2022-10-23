@@ -15,7 +15,7 @@ function AuthProvider({children}){
       localStorage.setItem("@rocketmovies:token", token);
 
 
-      api.defaults.headers.authorizations = `Bearer ${token}`;
+      api.defaults.headers.common['Authorization'] = `Bearer ${token}`;
 
       setData({user, token});
 
@@ -44,7 +44,7 @@ function AuthProvider({children}){
       setData({user, token: data.token})
 
       alert("Perfil atualizado com sucesso!");
-      
+
     } catch(error) {
       if(error.response){
         alert(error.response.data.message)
@@ -69,6 +69,7 @@ function AuthProvider({children}){
     <AuthContext.Provider value={{
       singIn, 
       SingOut,
+      updateProfile,
       user: data.user,
     }}>
       {children}
