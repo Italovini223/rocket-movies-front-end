@@ -27,6 +27,13 @@ function AuthProvider({children}){
       }
     }
   }
+  
+  function SingOut() {
+    localStorage.removeItem("@rocketmovies:user");
+    localStorage.removeItem("@rocketmovies:token");
+
+    setData({});
+  }
 
   useEffect(() => {
     const user = localStorage.getItem("@rocketmovies:user");
@@ -40,7 +47,11 @@ function AuthProvider({children}){
     }
   },[])
   return (
-    <AuthContext.Provider value={{singIn, user: data.user}}>
+    <AuthContext.Provider value={{
+      singIn, 
+      SingOut,
+      user: data.user,
+    }}>
       {children}
     </AuthContext.Provider>
   )

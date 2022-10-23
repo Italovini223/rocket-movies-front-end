@@ -1,9 +1,11 @@
 import { Container, Profile } from "./styles";
 import {Link} from 'react-router-dom'
+import { useAuth } from "../../hooks/auth";
 
 import {Input} from '../Input'
 
 export function Header(){
+  const {SingOut} = useAuth();
   return(
     <Container>
       <span>RocketMovies</span>
@@ -13,7 +15,7 @@ export function Header(){
       <Profile>
         <div>
           <strong>Ítalo Vinícius</strong>
-          <button>Sair</button>
+          <button onClick={SingOut}>Sair</button>
         </div>
 
         <Link to='/profile'>
