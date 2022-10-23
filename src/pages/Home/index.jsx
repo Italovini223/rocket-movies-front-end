@@ -13,7 +13,7 @@ export function Home() {
       <main>
         <Content>
 
-        <div class="head">
+        <div className="head">
             <h1>Meus filmes</h1>
             <NewNote to='/new'>
               <FiPlus />
