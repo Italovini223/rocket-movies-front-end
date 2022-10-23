@@ -1,15 +1,37 @@
-import { createContext, useContext } from "react";
+import { createContext, useContext, useState } from "react";
+import { api } from "../services/api";
 
 const AuthContext = createContext({});
 
 function AuthProvider({children}){
-  <AuthContext.Provider value={{email:"x"}}>
-    {children}
-  </AuthContext.Provider>
+  const[data, setData] = useState({})
+  async function singIn({email, password}) {
+    try {
+      const response = await api.post("/sessions",{email, password})
+
+      const {user, token} = response.data;
+
+      api.defaults.headers.authorizations = `Bearer ${token}`;
+
+      setData({user, token});
+
+    }catch(error){
+      if(error.response){
+        alert(error.response.data.message);
+      } else {
+        alert("Não voi possível fazer login, tente novamente mais tarde!")
+      }
+    }
+  }
+  return (
+    <AuthContext.Provider value={{singIn, user: data.user}}>
+      {children}
+    </AuthContext.Provider>
+  )
 }
 
 function useAuth(){
-  const context = useContext(a=AuthContext)
+  const context = useContext(AuthContext)
 
   return context
 }
