@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Container, Content } from "./styles";
 
 import{ Header} from '../../components/Header'
@@ -9,6 +10,18 @@ import {InputTag} from '../../components/InputTag'
 
 
 export function New() {
+  const[tags, setTags] = useState([]);
+  const[newTag, setNewTag] = useState("");
+
+  function handleAddTag(){
+    setTags(prevState => [...prevState, newTag])
+    setNewTag("");
+  }
+
+  function handleRemoveTag(deleted){
+    setTags(prevState => prevState.filter(tag => tag !== deleted));
+  }
+
   return(
     <Container>
       <Header />
@@ -44,12 +57,22 @@ export function New() {
         <h3>Marcadores</h3>
 
         <div className="Tags">
+          {
+            tags.map((tag, index) => (
+              <InputTag 
+                value={tag}
+                key={String(index)}
+                onClick={() => handleRemoveTag(tag)}
+              />
+            ))
+          }
           <InputTag 
-            value='React'
-          />
-          <InputTag 
+            value={newTag}
+            onChange={e => setNewTag(e.target.value)}
+            onClick={handleAddTag}
             isNew
           />
+         
         </div>
 
         <div className="buttons">

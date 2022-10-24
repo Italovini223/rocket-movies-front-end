@@ -45,7 +45,7 @@ export const Content = styled.div`
 
   > .Tags {
     background-color: ${({theme}) => theme.COLORS.BLACK_900};
-    height: 88px;
+    width: 100%;
     
     margin-bottom: 40px;
     border-radius: 8px;

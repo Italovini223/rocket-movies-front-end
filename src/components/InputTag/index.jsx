@@ -7,7 +7,8 @@ export function InputTag({isNew = false, value, onClick, ...rest}) {
   <Container
     isNew={isNew}
   >
-    <input type="text" 
+    <input 
+      type="text" 
       value={value}
       readOnly={!isNew}
       placeholder={isNew? 'Novo marcador': ''}
@@ -15,8 +16,8 @@ export function InputTag({isNew = false, value, onClick, ...rest}) {
     />
 
     <button
-      type="text"
-      onClick={onclick}
+      type="button"
+      onClick={onClick}
     >
       {isNew ? <FiPlus /> : <FiX />}
     </button>
