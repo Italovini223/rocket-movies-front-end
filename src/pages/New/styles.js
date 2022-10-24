@@ -44,14 +44,16 @@ export const Content = styled.div`
   }
 
   > .Tags {
+    display: flex;
+    flex-wrap: wrap;
+
     background-color: ${({theme}) => theme.COLORS.BLACK_900};
-    width: 100%;
     
     margin-bottom: 40px;
     border-radius: 8px;
     padding: 16px;
 
-    gap: 24px;
+    gap: 8px;
   }
 
   ::-webkit-scrollbar {
