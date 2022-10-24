@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import {Link} from 'react-router-dom'
 
-export const Container = styled(Link)`
+export const Container = styled.button`
   width: 100%;
 
   text-decoration: none;
