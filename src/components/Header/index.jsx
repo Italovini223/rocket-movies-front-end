@@ -1,4 +1,4 @@
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 
 import { Container, Profile } from "./styles";
 
@@ -12,6 +12,12 @@ import {Input} from '../Input'
 
 export function Header({onChange}){
   const {SingOut, user} = useAuth();
+  const navigate = useNavigate();
+
+  function handleSingOut(){
+    navigate("/");
+    SingOut();
+  }
 
   const avatarUrl = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` : avatarPlaceholder;
   return(
@@ -23,7 +29,7 @@ export function Header({onChange}){
       <Profile>
         <div>
           <strong>{user.name}</strong>
-          <button onClick={SingOut}>Sair</button>
+          <button onClick={handleSingOut}>Sair</button>
         </div>
 
         <Link to='/profile'>
