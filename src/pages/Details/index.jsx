@@ -1,5 +1,5 @@
 import { useState,useEffect } from "react";
-import { Container, Content } from "./styles";
+import { Container, Content, Headers } from "./styles";
 
 import { useParams } from "react-router-dom";
 
@@ -39,10 +39,14 @@ export function Details(){
     {
       data &&
       <Content>
-        <ArrowButton 
-          title='Voltar'
-          link='/'
-        />
+        <Headers>
+          <ArrowButton 
+            title='Voltar'
+            link='/'
+          />
+
+          <button>Excluir Nota</button>
+        </Headers>
 
           <div className="movie-info">
             <h1>{data.title}</h1>
@@ -50,6 +54,8 @@ export function Details(){
               value={data.rating}
             />
           </div>
+
+          
 
           <div className="note-info">
             <div className="created-by">

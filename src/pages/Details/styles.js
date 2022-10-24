@@ -92,3 +92,20 @@ export const Content = styled.div`
     margin-bottom: 40px;
   }
 `;
+
+export const Headers = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+  > button {
+    background: none;
+    border: none;
+
+
+    font-weight: 400;
+    font-size: 16px;
+
+    color: ${({theme}) => theme.COLORS.SALMON};
+  }
+`;
