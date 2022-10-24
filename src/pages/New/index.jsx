@@ -1,5 +1,10 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 import { Container, Content } from "./styles";
+
+import { api } from "../../services/api";
+
 
 import{ Header} from '../../components/Header'
 import {ArrowButton} from '../../components/ArrowButton';
@@ -10,8 +15,13 @@ import {InputTag} from '../../components/InputTag'
 
 
 export function New() {
+  const [title, setTitle] = useState("");
+  const[description, setDescription] = useState("");
+  const[rating, setRating] = useState(0);
   const[tags, setTags] = useState([]);
   const[newTag, setNewTag] = useState("");
+
+  const navigate = useNavigate();
 
   function handleAddTag(){
     setTags(prevState => [...prevState, newTag])
@@ -20,6 +30,18 @@ export function New() {
 
   function handleRemoveTag(deleted){
     setTags(prevState => prevState.filter(tag => tag !== deleted));
+  }
+
+  async function handleNewNote(){
+    await api.post("/notes", {
+      title,
+      description,
+      rating,
+      tags
+    });
+
+    alert("nota criada com sucesso!");
+    navigate("/");
   }
 
   return(
@@ -38,6 +60,7 @@ export function New() {
             type='text'
             id='title'
             placeholder='Titulo'
+            onChange={e => setTitle(e.target.value)}
           />
 
           <Input 
@@ -46,12 +69,14 @@ export function New() {
             min={0}
             max={5}
             placeholder='Sua nota (de 0 a 5)'
+            onChange={e => setRating(e.target.value)}
           />
         </div>
 
         <TextArea 
           id='comment'
           placeholder='observações'
+          onChange={e => setDescription(e.target.value)}
         />
         
         <h3>Marcadores</h3>
@@ -83,7 +108,7 @@ export function New() {
           />
            <Button 
             title='Salvar alterações'
-            type='submit'
+            onClick={handleNewNote}
           />
         </div>
       </Content>
