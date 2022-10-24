@@ -10,7 +10,8 @@ import {Header} from '../../components/Header'
 import {ArrowButton} from '../../components/ArrowButton'
 import {RatingItem} from '../../components/RatingItem'
 
-import { FiClock } from "react-icons/fi";
+import { FiClock, FiTrash} from "react-icons/fi";
+
 import { Tags } from "../../components/Tags";
 import avatarPlaceholder from '../../assets/avatar_placeholder.svg'
 
@@ -55,7 +56,12 @@ export function Details(){
             link='/'
           />
 
-          <button onClick={handleRemove}>Excluir Nota</button>
+          <button 
+           onClick={handleRemove}
+          >
+            Excluir Nota 
+            <FiTrash />
+          </button>
         </Headers>
 
           <div className="movie-info">

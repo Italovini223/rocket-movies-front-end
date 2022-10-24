@@ -102,10 +102,15 @@ export const Headers = styled.div`
     background: none;
     border: none;
 
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
 
     font-weight: 400;
     font-size: 16px;
 
     color: ${({theme}) => theme.COLORS.SALMON};
+
   }
 `;
