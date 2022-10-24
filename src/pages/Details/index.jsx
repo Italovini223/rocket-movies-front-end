@@ -18,11 +18,10 @@ import avatarPlaceholder from '../../assets/avatar_placeholder.svg'
 
 
 export function Details(){
-  const {user} = useAuth();
-  const navigate = useNavigate();
-
+  const {user} = useAuth(); 
   const[data, setData] = useState(null);
-
+  
+  const navigate = useNavigate();
   const params = useParams();
   const avatarUrl = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` : avatarPlaceholder;
 
@@ -33,6 +32,10 @@ export function Details(){
       await api.delete(`/notes/${params.id}`)
       navigate("/");
     }
+  }
+
+  function handleBack(){
+    navigate(-1)
   }
 
   useEffect(() => {
@@ -53,7 +56,7 @@ export function Details(){
         <Headers>
           <ArrowButton 
             title='Voltar'
-            link='/'
+            onClick={handleBack}
           />
 
           <button 

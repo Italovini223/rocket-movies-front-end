@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 import {FiUser, FiMail, FiLock, FiCamera} from 'react-icons/fi'
 
 import { Avatar, Container, Form } from "./styles";
@@ -21,11 +23,17 @@ export function Profile() {
   const[passwordOld, setPasswordOld] = useState("");
   const[passwordNew, setPasswordNew] = useState("");
 
+  const navigate= useNavigate();
+
 
   const avatarUrl = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` : avatarPlaceholder;
   const[avatar, setAvatar] = useState(avatarUrl);
   const[avatarFile, setAvatarFile] = useState(null);
   
+  function handleBack(){
+    navigate(-1)
+  }
+
   async function handleUpdate() {
     const user = {
       name,
@@ -49,7 +57,7 @@ export function Profile() {
   return(
     <Container>
       <header>
-        <ArrowButton title="Voltar" link="/" />
+        <ArrowButton title="Voltar" onClick={handleBack}/>
       </header>
 
       <Form>

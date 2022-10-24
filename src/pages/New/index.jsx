@@ -23,6 +23,10 @@ export function New() {
 
   const navigate = useNavigate();
 
+  function handleBack(){
+    navigate(-1)
+  }
+
   function handleAddTag(){
     setTags(prevState => [...prevState, newTag])
     setNewTag("");
@@ -60,7 +64,7 @@ export function New() {
       <Content>
         <ArrowButton 
           title='Voltar'
-          link='/'
+          onClick={handleBack}
         />
 
         <h1>Novo filme</h1>
