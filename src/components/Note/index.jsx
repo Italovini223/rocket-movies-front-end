@@ -7,7 +7,7 @@ import { RatingItem } from "../RatingItem";
 
 export function Note({data, ...rest}){
   return(
-    <Container to={`/details/${data.id}`}>
+    <Container {...rest}>
       <h2>{data.title}</h2>
       <RatingItem 
         value={data.rating}

@@ -1,4 +1,7 @@
 import { useState, useEffect } from "react";
+
+import { useNavigate } from "react-router-dom";
+
 import { Container, Content, NewNote } from "./styles";
 
 import {FiPlus} from 'react-icons/fi'
@@ -9,7 +12,13 @@ import { api } from "../../services/api";
 
 export function Home() {
   const[search, setSearch] = useState("");
-  const[movieNotes, setMovieNotes] = useState([])
+  const[movieNotes, setMovieNotes] = useState([]);
+
+  const navigate = useNavigate();
+
+  function handleDetails(id){
+    navigate(`/details/${id}`);
+  }
 
   useEffect(() => {
     async function fetchMovieNotes(){
@@ -41,6 +50,7 @@ export function Home() {
               <Note 
                 data={note}
                 key={String(note.id)}
+                onClick={() => handleDetails(note.id)}
               />
             ))
           }
