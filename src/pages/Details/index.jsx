@@ -36,17 +36,14 @@ export function Details(){
  return(
   <Container>
     <Header />
-    <Content>
-      <ArrowButton 
-        title='Voltar'
-        link='/'
-      />
+    {
+      data &&
+      <Content>
+        <ArrowButton 
+          title='Voltar'
+          link='/'
+        />
 
-      { 
-        
-        
-        data &&
-        <>
           <div className="movie-info">
             <h1>{data.title}</h1>
             <RatingItem 
@@ -83,10 +80,10 @@ export function Details(){
           <p>
             {data.description}
           </p>
-        </>
+        </Content>
       }
 
-    </Content>
+    
   </Container>
  )
 }
