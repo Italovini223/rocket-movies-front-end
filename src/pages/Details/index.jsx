@@ -1,7 +1,7 @@
 import { useState,useEffect } from "react";
 import { Container, Content, Headers } from "./styles";
 
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 import { api } from "../../services/api";
 import { useAuth } from "../../hooks/auth";
@@ -18,11 +18,21 @@ import avatarPlaceholder from '../../assets/avatar_placeholder.svg'
 
 export function Details(){
   const {user} = useAuth();
+  const navigate = useNavigate();
 
   const[data, setData] = useState(null);
 
   const params = useParams();
   const avatarUrl = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` : avatarPlaceholder;
+
+  async function handleRemove(){
+    const confirm = window.confirm("Deseja realmente remover a nota?");
+
+    if(confirm){
+      await api.delete(`/notes/${params.id}`)
+      navigate("/");
+    }
+  }
 
   useEffect(() => {
     async function fetchMovieNotes() {
@@ -45,7 +55,7 @@ export function Details(){
             link='/'
           />
 
-          <button>Excluir Nota</button>
+          <button onClick={handleRemove}>Excluir Nota</button>
         </Headers>
 
           <div className="movie-info">
