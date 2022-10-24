@@ -1,14 +1,29 @@
+import { useState, useEffect } from "react";
 import { Container, Content, NewNote } from "./styles";
 
 import {FiPlus} from 'react-icons/fi'
 
 import {Header} from '../../components/Header'
 import {Note} from '../../components/Note'
+import { api } from "../../services/api";
 
 export function Home() {
+  const[search, setSearch] = useState("");
+  const[movieNotes, setMovieNotes] = useState([])
+
+  useEffect(() => {
+    async function fetchMovieNotes(){
+      const response = await api.get(`/notes?title=${search}`);
+      setMovieNotes(response.data)
+    }
+
+    fetchMovieNotes();
+  },[search])
+
+  
   return(
     <Container>
-      <Header />
+      <Header onChange={e => setSearch(e.target.value)} />
       
       <main>
         <Content>
@@ -21,71 +36,14 @@ export function Home() {
             </NewNote>
           </div>
 
-          <Note data={{
-            title: "Interstellar",
-            value: 4,
-            description: `
-            Pragas nas colheitas fizeram a civilização humana regredir 
-            para uma sociedade agrária em futuro de data desconhecida. Cooper, 
-            ex-piloto da NASA, tem uma fazenda com sua família. Murphy, a filha de 
-            dez anos de Cooper, acredita que seu quarto está assombrado por um 
-            fantasma que tenta se comunicar com ela. Pai e filha descobrem que o ,
-            "fantasma" é uma inteligência desconhecida que está enviando mensagens 
-            codificadas através de radiação gravitacional, deixando coordenadas em 
-            binário que os levam até uma instalação secreta da NASA liderada pelo 
-            professor John Brand.
-             `,
-
-             tags : [
-              {id: 1, title:"Ficção cientifica"},
-              {id: 2, title:"Drama"},
-              {id: 3, title:"Familia"}
-             ],
-
-             id : 1,
-          }}/>
-          <Note data={{
-            title: "Interstellar",
-            value: 1,
-            description: `
-            Pragas nas colheitas fizeram a civilização humana regredir 
-            para uma sociedade agrária em futuro de data desconhecida. Cooper, 
-            ex-piloto da NASA, tem uma fazenda com sua família. Murphy, a filha de 
-            dez anos de Cooper, acredita que seu quarto está assombrado por um 
-            fantasma que tenta se comunicar com ela. Pai e filha descobrem que o ,
-            "fantasma" é uma inteligência desconhecida que está enviando mensagens 
-            codificadas através de radiação gravitacional, deixando coordenadas em 
-            binário que os levam até uma instalação secreta da NASA liderada pelo 
-            professor John Brand.
-             `,
-
-             tags : [
-              {id: 1, title:"Ficção cientifica"},
-              {id: 2, title:"Drama"},
-              {id: 3, title:"Familia"}
-             ]
-          }}/>
-          <Note data={{
-            title: "Interstellar",
-            value: 3,
-            description: `
-            Pragas nas colheitas fizeram a civilização humana regredir 
-            para uma sociedade agrária em futuro de data desconhecida. Cooper, 
-            ex-piloto da NASA, tem uma fazenda com sua família. Murphy, a filha de 
-            dez anos de Cooper, acredita que seu quarto está assombrado por um 
-            fantasma que tenta se comunicar com ela. Pai e filha descobrem que o ,
-            "fantasma" é uma inteligência desconhecida que está enviando mensagens 
-            codificadas através de radiação gravitacional, deixando coordenadas em 
-            binário que os levam até uma instalação secreta da NASA liderada pelo 
-            professor John Brand.
-             `,
-
-             tags : [
-              {id: 1, title:"Ficção cientifica"},
-              {id: 2, title:"Drama"},
-              {id: 3, title:"Familia"}
-             ]
-          }}/>
+          {
+            movieNotes.map(note => (
+              <Note 
+                data={note}
+                key={String(note.id)}
+              />
+            ))
+          }
         </Content>
       </main>
     </Container>

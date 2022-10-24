@@ -10,7 +10,7 @@ export function Note({data, ...rest}){
     <Container to={`/details/${data.id}`}>
       <h2>{data.title}</h2>
       <RatingItem 
-        value={data.value}
+        value={data.rating}
       />
 
       <p>{data.description}</p>
@@ -19,7 +19,7 @@ export function Note({data, ...rest}){
         data.tags && 
         <footer>
           {
-            data.tags.map(tag => <Tags key={tag.id}  title={tag.title}/>)
+            data.tags.map(tag => <Tags key={tag.id}  title={tag.name}/>)
           }
         </footer>
       }
