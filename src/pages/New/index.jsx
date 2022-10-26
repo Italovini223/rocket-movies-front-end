@@ -17,7 +17,7 @@ import {InputTag} from '../../components/InputTag'
 export function New() {
   const [title, setTitle] = useState("");
   const[description, setDescription] = useState("");
-  const[rating, setRating] = useState(0);
+  const[rating, setRating] = useState(null);
   const[tags, setTags] = useState([]);
   const[newTag, setNewTag] = useState("");
 
@@ -34,6 +34,14 @@ export function New() {
 
   function handleRemoveTag(deleted){
     setTags(prevState => prevState.filter(tag => tag !== deleted));
+  }
+
+  function handleDeleteNote(){
+    setTitle("");
+    setDescription("");
+    setRating("");
+    setTags([]);
+    setNewTag("");
   }
 
   async function handleNewNote(){
@@ -74,6 +82,7 @@ export function New() {
             type='text'
             id='title'
             placeholder='Titulo'
+            value={title}
             onChange={e => setTitle(e.target.value)}
           />
 
@@ -83,6 +92,7 @@ export function New() {
             min={0}
             max={5}
             placeholder='Sua nota (de 0 a 5)'
+            value={rating}
             onChange={e => setRating(e.target.value)}
           />
         </div>
@@ -119,6 +129,7 @@ export function New() {
             title='Excluir filme'
             type='submit'
             Delete
+            onClick={handleDeleteNote}
           />
            <Button 
             title='Salvar alterações'
