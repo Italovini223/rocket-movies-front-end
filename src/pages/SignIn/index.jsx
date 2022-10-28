@@ -7,7 +7,7 @@ import { Button} from '../../components/Button'
 import { Link } from "react-router-dom";
 import { useAuth } from "../../hooks/auth";
 
-import {FiUser, FiMail, FiLock} from 'react-icons/fi'
+import {FiMail, FiLock} from 'react-icons/fi'
 
 
 export function SignIn(){
