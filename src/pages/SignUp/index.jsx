@@ -42,7 +42,7 @@ export function SignUp(){
   }
 
   function handleBack() {
-    navigate(-1);
+    navigate("/");
   }
 
   return(
