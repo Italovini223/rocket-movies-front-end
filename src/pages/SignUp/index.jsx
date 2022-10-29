@@ -41,6 +41,10 @@ export function SignUp(){
 
   }
 
+  function handleBack() {
+    navigate(-1);
+  }
+
   return(
     <Container>
       <Form>
@@ -73,7 +77,7 @@ export function SignUp(){
        <div className="back">
         <ArrowButton 
             title="Voltar para o login" 
-            link='/'
+            onClick={handleBack}
           />
        </div>
       </Form>
